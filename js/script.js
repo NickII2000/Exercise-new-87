@@ -287,16 +287,17 @@ window.addEventListener('DOMContentLoaded', () => {
                 //     'Content-type': 'application/json'
                 // },
                 body: formData
-            }).then(data => {
-                console.log(data);
-                showThanksModal(message.success);
-                form.reset();
-                statusMessage.remove();
-            }).catch(() => {
-                showThanksModal(message.failure);
-            }).finally(() => {
-                form.reset();
-            });
+            }).then(data => data.text())
+                .then(data => {
+                    console.log(data);
+                    showThanksModal(message.success);
+                    form.reset();
+                    statusMessage.remove();
+                }).catch(() => {
+                    showThanksModal(message.failure);
+                }).finally(() => {
+                    form.reset();
+                });
 
         });
     }
