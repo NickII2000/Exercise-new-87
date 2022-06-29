@@ -46,7 +46,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // const deadLine = '2022-07-01';
     // const deadLine = '2022-06-14';
 
-
     function getTimeRemaining(endTime) {
         let days, hours, minutes, seconds;
         const t = Date.parse(endTime) - Date.parse(new Date());
