@@ -331,7 +331,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //     .then(response => response.json())
     //     .then(json => console.log(json));
 
-    fetch('https:/jsonplaceholder.typicode.com/todos/7', {
+    fetch('https:/jsonplaceholder.typicode.com/posts', {
         method: "POST",
         body: JSON.stringify({ name: 'Nick' }),
         headers: {
