@@ -278,7 +278,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             console.log(object);
 
-            fetch('server.php', {
+            fetch('server1.php', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
