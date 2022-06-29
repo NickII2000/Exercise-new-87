@@ -264,30 +264,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(form);
 
-            // console.log(form);
-            // console.log(formData);
-            // console.log([...formData]);
-            // formData.forEach((item, i, arr) => {
-            //     console.log(`item = ${item}, i = ${i}, arr = ${arr})`);
-            // });
+            console.log(form);
+            console.log(formData);
+            console.log([...formData]);
+            formData.forEach((item, i, arr) => {
+                console.log(`item = ${item}, i = ${i}, arr = ${arr})`);
+            });
 
-            // const object = {};
-            // formData.forEach(function (value, key) {
-            //     object[key] = value;
-            // });
+            const object = {};
+            formData.forEach(function (value, key) {
+                object[key] = value;
+            });
 
-            // console.log(object);
-
-            // const json = JSON.stringify(object);
-            // request.send(json);
+            console.log(object);
 
             fetch('server.php', {
                 method: 'POST',
-                // headers: {
-                //     'Content-type': 'application/json'
-                // },
-                body: formData
-            }).then(data => data.text())
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(object),
+            })
+                .then(data => data.text())
                 .then(data => {
                     console.log(data);
                     showThanksModal(message.success);
