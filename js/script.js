@@ -278,7 +278,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             console.log(object);
 
-            fetch('server1.php', {
+            fetch('server.php', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
@@ -290,10 +290,10 @@ window.addEventListener('DOMContentLoaded', () => {
                     console.log(data);
                     showThanksModal(message.success);
                     form.reset();
-                    statusMessage.remove();
                 }).catch(() => {
                     showThanksModal(message.failure);
                 }).finally(() => {
+                    statusMessage.remove();
                     form.reset();
                 });
 
